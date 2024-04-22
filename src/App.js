@@ -1,24 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { useEffect, useState } from "react";
+import ProductCard from "./components/ProductCard";
+import ProductCardExpanded from "./components/ProductCardExpanded";
 
 function App() {
+  const [products, setProducts] = useState([]);
+  const [active,setActive] = useState(2) //active card to be stored in this state variable.
+
+  const fetchProducts = async () => {
+    const response = await fetch("https://dummyjson.com/products");
+
+    if (response.ok) {
+      const jsondata = await response.json();
+      setProducts(jsondata.products);
+      console.log(jsondata.products);
+    } else {
+      alert("Error extracting the products.");
+    }
+  };
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="heading">Products</div>
+      <div className="container">
+        {products.map((product,index) => {
+          return (
+            <ProductCard
+              indx= {index}
+              title={product.title}
+              price={product.price}
+              thumbnail={product.thumbnail}
+              discount={product.discountPercentage}
+              brand={product.brand}
+              setactive = {setActive}
+            />
+          );
+        })}
+        {active !== -1 && (
+          <ProductCardExpanded/>
+        )}
+      </div>
+    </>
   );
 }
 
