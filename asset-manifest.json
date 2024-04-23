@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Products-Insti-Webops/static/css/main.220f0cc3.css",
+    "main.js": "/Products-Insti-Webops/static/js/main.9fdc67f0.js",
+    "static/js/453.ddc43ec9.chunk.js": "/Products-Insti-Webops/static/js/453.ddc43ec9.chunk.js",
+    "static/media/logo.svg": "/Products-Insti-Webops/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/Products-Insti-Webops/index.html",
+    "main.220f0cc3.css.map": "/Products-Insti-Webops/static/css/main.220f0cc3.css.map",
+    "main.9fdc67f0.js.map": "/Products-Insti-Webops/static/js/main.9fdc67f0.js.map",
+    "453.ddc43ec9.chunk.js.map": "/Products-Insti-Webops/static/js/453.ddc43ec9.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.220f0cc3.css",
+    "static/js/main.9fdc67f0.js"
+  ]
+}
