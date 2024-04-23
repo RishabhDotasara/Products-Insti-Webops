@@ -6,7 +6,7 @@ import ProductCardExpanded from "./components/ProductCardExpanded";
 
 function App() {
   const [products, setProducts] = useState([]);
-  const [active,setActive] = useState(2) //active card to be stored in this state variable.
+  const [active,setActive] = useState(-1) //active card to be stored in this state variable.
 
   const fetchProducts = async () => {
     const response = await fetch("https://dummyjson.com/products");
@@ -25,7 +25,7 @@ function App() {
   }, []);
   return (
     <>
-      <div className="heading">Products</div>
+      <h1 className="heading">Products</h1>
       <div className="container">
         {products.map((product,index) => {
           return (
@@ -41,7 +41,7 @@ function App() {
           );
         })}
         {active !== -1 && (
-          <ProductCardExpanded/>
+          <ProductCardExpanded title={products[active].title} setactive={setActive} product={products[active]}/>
         )}
       </div>
     </>

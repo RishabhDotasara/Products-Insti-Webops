@@ -132,17 +132,117 @@ body
   left: 0;
   display: flex;
   align-items: center;
+  transition: 0.2s all ease-in-out;
   justify-content: center;
 }
 .expanded-product-card
 {
     background: white;
-    height: 70vh;
-    width: 50vw;
+    height: 50vh;
+    width: 70vw;
+    padding: 10px;
     border-radius: 10px;
-
+    position: relative;
+    display: flex;
+    gap: 10px;
   
   /* padding: 10px; */
 }
 
+.expanded-product-card .cross
+{
+  position: absolute;
+  top: 10px;
+  right: 10px ;
+  font-size: 1.5rem;
+}
 
+.expanded-product-card .images
+{
+  display: flex;
+  flex-direction: column;
+  flex: 0.45;
+  width: 400px;
+  gap: 5px;
+}
+
+.expanded-product-card .images .main
+{
+  width: 100%;
+  height: 80%;
+  border-radius: 10px;
+}
+
+.expanded-product-card .images .slides
+{
+  display: flex;
+  width: 100%;
+  height: 20%;
+  border-radius: 10px;
+  overflow-x: scroll;
+  /* background: red; */
+  gap: 10px;
+}
+
+.expanded-product-card .images .slides .slide 
+{
+  height: 100%;
+  width: 80px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.expanded-product-card .info 
+{
+  flex: 0.55;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+}
+
+.expanded-product-card-container .info .details
+{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 1.1rem;
+}
+
+.expanded-product-card-container .info .actions
+{
+  /* background: red; */
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  /* margin-top:30px; */
+}
+
+.expanded-product-card-container .info .actions .btn 
+{
+  background-color: black;
+  padding: 10px;
+  color: white;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  width: 40%;
+}
+
+@media screen and (max-width:900px) {
+  .expanded-product-card
+  {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .expanded-product-card .images
+  {
+    width: 100%;
+    /* background: red; */
+  }
+}
